@@ -1,13 +1,17 @@
 //variables
+//views
 var difficultySelectorView = document.querySelector('.difficulty-selector-view');
 var classicGameView = document.querySelector('.classic-game-view');
 var difficultGameView = document.querySelector('.difficult-game-view')
+var difficultGameView = document.querySelector('.difficult-game-view');
+//buttons
 var difficultDifficultyButton = document.querySelector('.difficult-difficulty-selector');
 var classicDifficultyButton = document.querySelector('.classic-difficulty-selector');
-var difficultGameView = document.querySelector('.difficult-game-view');
+var changeDifficulty = document.querySelector('.change-difficulty')
 //eventListeners
 classicDifficultyButton.addEventListener('click', showClassicGame);
 difficultDifficultyButton.addEventListener('click', showDifficultGame);
+changeDifficulty.addEventListener('click', showDifficultySelector)
 //functions
 function showClassicGame() {
   addClass(difficultySelectorView, 'hidden');
@@ -20,6 +24,11 @@ function showDifficultGame() {
   removeClass(difficultGameView, 'hidden');
 }
 
+function showDifficultySelector() {
+  removeClass(difficultySelectorView, 'hidden');
+  addClass(classicGameView, 'hidden');
+  addClass(difficultGameView, 'hidden');
+}
 
 function removeClass(element, rule) {
   element.classList.remove(rule)
