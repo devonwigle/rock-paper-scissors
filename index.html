@@ -7,12 +7,15 @@
 <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@500&display=swap" rel="stylesheet">
   </head>
   <body>
-    <aside>Human</aside>
+    <aside>Human
+      <img class="player-image" src="./assets/pirate.svg" alt="Person with long hair and tricorner hat with skull and crossbones" />
+      <button>Change difficulty?</button>
+    </aside>
     <main>
       <h1>Grandparent, Parent, Child</h1>
-      <section class="difficulty-selector">
+      <section class="hidden" "difficulty-selector">
         <button class="game-button">
-          <h3>Classic
+          <h3>Classic 
             <p>Children &gt; Grandparents<br>
             Parents &gt; Children<br>
             Grandparents &gt; Parents</p>
@@ -28,7 +31,7 @@
           </h3>
         </button>
       </section>
-      <section class="hidden">
+      <section >
         <button>children
           <img class="button-image" src="./assets/children.svg" alt="two small human stick figures raising their arms"/>
         </button>
@@ -46,7 +49,9 @@
         </button>
       </section>
     </main>
-    <aside>Computer</aside>
+    <aside>Computer
+      <img class="player-image" src="./assets/computer.svg" alt="black and white laptop computer"/>
+    </aside>
   </body>
   <script type="text/javascript" src="./src/main.js"</script>
   <script type="text/javascript" src="./src/game.js"</script>
