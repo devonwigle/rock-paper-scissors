@@ -1,0 +1,60 @@
+* {
+  font-family: 'Ubuntu', sans-serif;
+  color: #061F78;
+  height: 100vh;
+}
+
+body {
+  display: flex;
+  justify-content: space-between;
+  margin: none;
+  padding: none;
+}
+
+main {
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+  width: 60%;
+  background-color: #FBB0DD;
+}
+
+.difficulty-selector {
+  display: flex;
+  justify-content: center;
+}
+
+button {
+  height: 120px;
+}
+
+.game-button {
+  height: 150px;
+  width: 200px;
+  border: none;
+}
+
+.button-image {
+  height: 100px;
+  width: auto;
+}
+
+p {
+  font-size: 12px;
+}
+
+.player-image {
+  height: 80px;
+  width: auto;
+}
+
+aside {
+  display: flex;
+  justify-content: center;
+  width: 20%;
+  background-color: #FBD4EB
+}
+
+.hidden {
+  display: none;
+}
