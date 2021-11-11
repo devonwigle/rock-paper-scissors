@@ -8,22 +8,43 @@
   </head>
   <body>
     <aside>Human</aside>
-    <main>Grandparent, Parent, Child
-      <button>children
-        <img src="./assets/children.svg" alt="two small human stick figures raising their arms"/>
-      </button>
-      <button>parents
-        <img src="./assets/parents.svg" alt="two adult stick figures holding hands"/>
-      </button>
-      <button>grandparents
-        <img src="./assets/grandparents.svg" alt="Two stick figures with canes in front of trees"/>
-      </button>
-      <button>cat
-        <img src="./assets/cat.svg" alt="sitting cat with collar and curved tail"/>
-      </button>
-      <button>dog
-        <img src="./assets/dog.svg" alt="sitting dog with curved tail"/>
-      </button>
+    <main>
+      <h1>Grandparent, Parent, Child</h1>
+      <section class="difficulty-selector">
+        <button class="game-button">
+          <h3>Classic
+            <p>Children &gt; Grandparents<br>
+            Parents &gt; Children<br>
+            Grandparents &gt; Parents</p>
+          </h3>
+        </button>
+        <button class="game-button">
+          <h3>Difficult
+            <p>Children &gt; Grandparents & Cat<br>
+            Parents &gt; Children & Dog<br>
+            Grandparents &gt; Parents & Dog<br>
+            Dog &gt; Children & Cat<br>
+            Cat &gt; Grandparents & Parents</p>
+          </h3>
+        </button>
+      </section>
+      <section class="hidden">
+        <button>children
+          <img class="button-image" src="./assets/children.svg" alt="two small human stick figures raising their arms"/>
+        </button>
+        <button>parents
+          <img class="button-image" src="./assets/parents.svg" alt="two adult stick figures holding hands"/>
+        </button>
+        <button>grandparents
+          <img class="button-image" src="./assets/grandparents.svg" alt="Two stick figures with canes in front of trees"/>
+        </button>
+        <button>cat
+          <img class="button-image" src="./assets/cat.svg" alt="sitting cat with collar and curved tail"/>
+        </button>
+        <button>dog
+          <img class="button-image" src="./assets/dog.svg" alt="sitting dog with curved tail"/>
+        </button>
+      </section>
     </main>
     <aside>Computer</aside>
   </body>
