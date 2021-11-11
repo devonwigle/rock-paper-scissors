@@ -9,19 +9,20 @@
   <body>
     <aside>Human
       <img class="player-image" src="./assets/pirate.svg" alt="Person with long hair and tricorner hat with skull and crossbones" />
-      <button>Change difficulty?</button>
+      <p>Wins: 0</p>
+      <button class="hidden">Change difficulty?</button>
     </aside>
     <main>
       <h1>Grandparent, Parent, Child</h1>
-      <section class="hidden" "difficulty-selector">
-        <button class="game-button">
-          <h3>Classic 
+      <section class="difficulty-selector-view">
+        <button class="game-button" id="classicDifficultySelector">
+          <h3>Classic
             <p>Children &gt; Grandparents<br>
             Parents &gt; Children<br>
             Grandparents &gt; Parents</p>
           </h3>
         </button>
-        <button class="game-button">
+        <button class="game-button" id="difficultDifficultySelector">
           <h3>Difficult
             <p>Children &gt; Grandparents & Cat<br>
             Parents &gt; Children & Dog<br>
@@ -31,26 +32,29 @@
           </h3>
         </button>
       </section>
-      <section >
-        <button>children
+      <section class="classic-game-view hidden">
+        <button class="classic">children
           <img class="button-image" src="./assets/children.svg" alt="two small human stick figures raising their arms"/>
         </button>
-        <button>parents
+        <button class="classic">parents
           <img class="button-image" src="./assets/parents.svg" alt="two adult stick figures holding hands"/>
         </button>
-        <button>grandparents
+        <button class="classic">grandparents
           <img class="button-image" src="./assets/grandparents.svg" alt="Two stick figures with canes in front of trees"/>
         </button>
+      </section>
+      <section class="hidden">
         <button>cat
-          <img class="button-image" src="./assets/cat.svg" alt="sitting cat with collar and curved tail"/>
+          <img class="button-image "src="./assets/cat.svg" alt="sitting cat with collar and curved tail"/>
         </button>
         <button>dog
-          <img class="button-image" src="./assets/dog.svg" alt="sitting dog with curved tail"/>
+          <img class="button-image hidden" src="./assets/dog.svg" alt="sitting dog with curved tail"/>
         </button>
       </section>
     </main>
     <aside>Computer
       <img class="player-image" src="./assets/computer.svg" alt="black and white laptop computer"/>
+      <p>Wins: 0</p>
     </aside>
   </body>
   <script type="text/javascript" src="./src/main.js"</script>
