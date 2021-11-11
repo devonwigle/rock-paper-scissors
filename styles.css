@@ -31,6 +31,7 @@ button {
 .game-button {
   height: 150px;
   width: 200px;
+  border: none;
 }
 
 .button-image {
@@ -40,6 +41,11 @@ button {
 
 p {
   font-size: 12px;
+}
+
+.player-image {
+  height: 80px;
+  width: auto;
 }
 
 aside {
