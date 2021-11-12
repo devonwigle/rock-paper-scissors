@@ -8,6 +8,9 @@ var difficultGameView = document.querySelector('.difficult-game-view');
 var difficultDifficultyButton = document.querySelector('.difficult-difficulty-selector');
 var classicDifficultyButton = document.querySelector('.classic-difficulty-selector');
 var changeDifficulty = document.querySelector('.change-difficulty')
+// players
+var computer = new Player('Computer', './assets/computer.svg')
+var human = new Player('Human', './assets/astronaut.svg')
 //eventListeners
 classicDifficultyButton.addEventListener('click', showClassicGame);
 difficultDifficultyButton.addEventListener('click', showDifficultGame);
