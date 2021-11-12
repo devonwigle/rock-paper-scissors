@@ -7,12 +7,14 @@ class Game {
 
   }
   winConditions() {
-    // ties
-    // grandparent beats grandparent
-    // parent beats children
-    // children beats grandparents
+    if(children.clicked && !parents.clicked) {
 
-    // decide on difficult settings
+    } else if (parents.clicked && !grandparents.clicked) {
+
+    } else if (grandparents.clicked && !children.clicked) {
+
+    } else if ()// ties
+
   }
   timeOut() {
     //resets board to begin new game
