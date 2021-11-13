@@ -65,8 +65,9 @@ function showDifficultySelector() {
 function showOutcome(choice) {
   game.player1.takeTurn(choice);
   game.player2.takeTurn();
-  
-
+  gameWinner.innerText = game.winConditions();
+  humanWins.innerText = game.player1.wins;
+  computerWins.innerText = game.player2.wins;
   removeClass(outcomeGameView, 'hidden');
   addClass(classicGameView, 'hidden');
   addClass(difficultGameView, 'hidden');
