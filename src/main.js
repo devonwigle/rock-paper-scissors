@@ -1,5 +1,5 @@
 //variables
-var game;
+var game = new Game()
 var gameWinner = document.querySelector('.game-winner');
 var humanWins = document.querySelector('.human-wins');
 var computerWins = document.querySelector('.computer-wins')
@@ -43,7 +43,7 @@ dogButton.addEventListener('click', function() {
 function showClassicGame() {
   addClass(difficultySelectorView, 'hidden');
   removeClass(classicGameView, 'hidden');
-  game = new Game('classic');
+  game.type = 'classic'
   game.trackData();
 };
 
@@ -51,7 +51,7 @@ function showDifficultGame() {
   addClass(difficultySelectorView, 'hidden');
   removeClass(classicGameView, 'hidden');
   removeClass(difficultGameView, 'hidden');
-  game = new Game('difficult');
+  game.type = 'difficult'
   game.trackData();
 }
 
@@ -66,8 +66,8 @@ function showOutcome(choice) {
   game.player1.takeTurn(choice);
   game.player2.takeTurn();
   gameWinner.innerText = game.winConditions();
-  humanWins.innerText = game.player1.wins;
-  computerWins.innerText = game.player2.wins;
+  humanWins.innerText = `Wins: ${game.player1.wins}`;
+  computerWins.innerText = `Wins: ${game.player2.wins}`;
   removeClass(outcomeGameView, 'hidden');
   addClass(classicGameView, 'hidden');
   addClass(difficultGameView, 'hidden');
