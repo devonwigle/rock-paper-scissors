@@ -1,8 +1,8 @@
 class Player {
-  constructor(name, token, wins) {
+  constructor(name, token) {
     this.name = name;
     this.token = token;
-    this.wins = wins || 0;
+    this.wins = 0;
     this.choice = '';
   }
   saveWinsToStorage() {
@@ -15,8 +15,7 @@ class Player {
     if (choice) {
       this.choice = choice
     } else if (!choice) {
-      var chosenIndex = Math.floor(Math.random() * game.choices.length);
-      this.choice = game.choices[chosenIndex]
+      this.choice = game.choices[Math.floor(Math.random() * game.choices.length)]
     }
   }
 }
