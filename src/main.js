@@ -1,4 +1,8 @@
 //variables
+var game;
+var gameWinner = document.querySelector('.game-winner');
+var humanWins = document.querySelector('.human-wins');
+var computerWins = document.querySelector('.computer-wins')
 //views
 var difficultySelectorView = document.querySelector('.difficulty-selector-view');
 var classicGameView = document.querySelector('.classic-game-view');
@@ -14,8 +18,6 @@ var grandparentsButton = document.querySelector('#grandparents');
 var catButton = document.querySelector('#cat');
 var dogButton = document.querySelector('#dog');
 
-var gameWinner = document.querySelector('.game-winner');
-var game;
 
 //eventListeners
 classicDifficultyButton.addEventListener('click', showClassicGame);
@@ -63,7 +65,8 @@ function showDifficultySelector() {
 function showOutcome(choice) {
   game.player1.takeTurn(choice);
   game.player2.takeTurn();
-  gameWinner.innerText = game.winConditions();
+  
+
   removeClass(outcomeGameView, 'hidden');
   addClass(classicGameView, 'hidden');
   addClass(difficultGameView, 'hidden');
