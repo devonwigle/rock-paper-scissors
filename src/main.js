@@ -14,29 +14,43 @@ var grandparentsButton = document.querySelector('#grandparents');
 var catButton = document.querySelector('#cat');
 var dogButton = document.querySelector('#dog');
 
-var gameWinner = document.querySelector('.game-winner')
+var gameWinner = document.querySelector('.game-winner');
+var game;
 
 //eventListeners
 classicDifficultyButton.addEventListener('click', showClassicGame);
 difficultDifficultyButton.addEventListener('click', showDifficultGame);
 changeDifficulty.addEventListener('click', showDifficultySelector);
 childrenButton.addEventListener('click', function() {
-  game.player1.play()
+  showOutcome('children')
 });
-parentsButton.addEventListener('click', showOutcome);
-grandparentsButton.addEventListener('click', showOutcome);
-catButton.addEventListener('click', showOutcome);
-dogButton.addEventListener('click', showOutcome);
+parentsButton.addEventListener('click', function() {
+  showOutcome('parents')
+});
+grandparentsButton.addEventListener('click', function() {
+  showOutcome('grandparents')
+});
+catButton.addEventListener('click', function() {
+  showOutcome('cat')
+});
+dogButton.addEventListener('click', function() {
+  showOutcome('dog')
+});
+
 //functions
 function showClassicGame() {
   addClass(difficultySelectorView, 'hidden');
   removeClass(classicGameView, 'hidden');
+  game = new Game('classic');
+  game.trackData();
 };
 
 function showDifficultGame() {
   addClass(difficultySelectorView, 'hidden');
   removeClass(classicGameView, 'hidden');
   removeClass(difficultGameView, 'hidden');
+  game = new Game('difficult');
+  game.trackData();
 }
 
 function showDifficultySelector() {
@@ -45,7 +59,7 @@ function showDifficultySelector() {
   addClass(difficultGameView, 'hidden');
 };
 
-function showOutcome() {
+function showOutcome(choice) {
   game.player1.takeTurn(choice);
   game.player2.takeTurn();
   gameWinner.innerText = game.winConditions();
