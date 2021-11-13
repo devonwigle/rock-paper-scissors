@@ -14,12 +14,15 @@ var grandparentsButton = document.querySelector('#grandparents');
 var catButton = document.querySelector('#cat');
 var dogButton = document.querySelector('#dog');
 
+var gameWinner = document.querySelector('.game-winner')
 
 //eventListeners
 classicDifficultyButton.addEventListener('click', showClassicGame);
 difficultDifficultyButton.addEventListener('click', showDifficultGame);
 changeDifficulty.addEventListener('click', showDifficultySelector);
-childrenButton.addEventListener('click', showOutcome);
+childrenButton.addEventListener('click', function() {
+  game.player1.play()
+});
 parentsButton.addEventListener('click', showOutcome);
 grandparentsButton.addEventListener('click', showOutcome);
 catButton.addEventListener('click', showOutcome);
@@ -43,15 +46,21 @@ function showDifficultySelector() {
 };
 
 function showOutcome() {
+  game.player1.takeTurn(choice);
+  game.player2.takeTurn();
+  gameWinner.innerText = game.winConditions();
   removeClass(outcomeGameView, 'hidden');
   addClass(classicGameView, 'hidden');
   addClass(difficultGameView, 'hidden');
 };
 
-function displayChoices(humanChoice, computerChoice) {
-  // outcomeGameView.innerHTML = `
-  //   <img src="${}"`
-}
+function humanChoice() {
+  button.clicked
+};
+
+function computerChoice(array) { //get array from game type in game.js
+  return Math.floor(Math.random() * array.length);
+};
 
 function removeClass(element, rule) {
   element.classList.remove(rule)
