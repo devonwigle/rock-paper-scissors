@@ -1,49 +1,62 @@
 class Game {
   constructor(difficultyLevel) {
     this.player1 = new Player('Human', './assets/astronaut.svg');
-    this.player2 = new Player('Computer', '.assets/computer.svg')
+    this.player2 = new Player('Computer', '.assets/computer.svg');
     this.type = difficultyLevel;
     this.choices = [];
     this.winner = null;
   }
 
-  play() {
-    if (this.type === 'classic') {
-      this.choices.push('children', 'parents', 'grandparents')
-    }
-    this.choices.push('children', 'parents', 'grandparents', 'dog', 'cat')
-  }
-
   trackData() {
-
+    var classics = ['children', 'parents', 'grandparents'];
+    var difficults = ['children', 'parents', 'grandparents', 'dog', 'cat'];
+    if (this.type === 'classic') {
+      this.choices = classics
+    } else if (this.type === 'difficult')
+    this.choices = difficults
   }
-  winConditions(humanChoice, computerChoice) {
-    if (player1.choice === player2.choice) {
+
+  winConditions() {
+    if (game.player1.choice === game.player2.choice) {
       this.winner = 'Tie!'
+      console.log('human', game.player1.choice)
+      console.log('computer', game.player2.choice)
       return 'Tie!'
-    } else if (player1.choice === 'children' && (player2.choice !== 'parents' || player2.choice !== 'dog')) {
-      this.winner = player1.name
-      player1.wins ++
+    } else if (game.player1.choice === 'children' && (game.player2.choice !== 'parents' || game.player2.choice !== 'dog')) {
+      this.winner = game.player1.name
+      game.player1.wins ++
+      console.log('human', game.player1.choice)
+      console.log('computer', game.player2.choice)
       return `${game.player1.name} wins!`
-    } else if (player1.choice === 'parents' && (player2.choice !== 'grandparents' ||  player2.choice !== 'cat')) {
-      this.winner = player1.name
-      player1.wins ++
+    } else if (game.player1.choice === 'parents' && (game.player2.choice !== 'grandparents' ||  game.player2.choice !== 'cat')) {
+      this.winner = game.player1.name
+      game.player1.wins ++
+      console.log('human', game.player1.choice)
+      console.log('computer', game.player2.choice)
       return `${game.player1.name} wins!`
-    } else if (player1.choice === 'grandparents' && (player2.choice !== 'children' || player2.choice !== 'cat')) {
-      this.winner = player1.name
-      player1.wins ++
+    } else if (game.player1.choice === 'grandparents' && (game.player2.choice !== 'children' || game.player2.choice !== 'cat')) {
+      this.winner = game.player1.name
+      game.player1.wins ++
+      console.log('human', game.player1.choice)
+      console.log('computer', game.player2.choice)
       return `${game.player1.name} wins!`
-    } else if (player1.choice === 'cat' && (player2.choice !== 'dog' || player2.choice !== 'children')) {
-      this.winner = player1.name
-      player1.wins ++
+    } else if (game.player1.choice === 'cat' && (game.player2.choice !== 'dog' || game.player2.choice !== 'children')) {
+      this.winner = game.player1.name
+      game.player1.wins ++
+      console.log('human', game.player1.choice)
+      console.log('computer', game.player2.choice)
       return `${game.player1.name} wins!`
-    } else if (player1.choice === 'dog' && (player2.choice !== 'parents' || player2.choice !== 'grandparents')) {
-      this.winner = player1.name
-      player1.wins ++
+    } else if (game.player1.choice === 'dog' && (game.player2.choice !== 'parents' || game.player2.choice !== 'grandparents')) {
+      this.winner = game.player1.name
+      game.player1.wins ++
+      console.log('human', game.player1.choice)
+      console.log('computer', game.player2.choice)
       return `${game.player1.name} wins!`
     }
-    this.winner = player2.name
-    player2.wins ++
+    this.winner = game.player2.name
+    game.player2.wins ++
+    console.log('human', game.player1.choice)
+    console.log('computer', game.player2.choice)
     return `${game.player2.name} wins!`
 
   }
