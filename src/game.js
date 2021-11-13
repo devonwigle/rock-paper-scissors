@@ -8,26 +8,36 @@ class Game {
   }
 
   play() {
-    if (this.type = 'classic') {
+    if (this.type === 'classic') {
       this.choices.push('children', 'parents', 'grandparents')
     }
     this.choices.push('children', 'parents', 'grandparents', 'dog', 'cat')
   }
-  
+
   trackData() {
 
   }
   winConditions(humanChoice, computerChoice) {
-    if(children.clicked && !parents.clicked && !dog.clicked) {
-
-    } else if (parents.clicked && !grandparents.clicked && !cat.clicked) {
-
-    } else if (grandparents.clicked && !children.clicked && !cat.clicked) {
-
-    } else if (cat.clicked && !dog.clicked && !children.clicked) {
-
-    } else if (dog.clicked && !parents.clicked && !grandparents.clicked)
-  // ties
+    if (player1.choice === player2.choice) {
+      this.winner = 'Tie!'
+    } else if (player1.choice === 'children' && (player2.choice !== 'parents' || player2.choice !== 'dog')) {
+      this.winner = player1.name
+      player1.wins ++
+    } else if (player1.choice === 'parents' && (player2.choice !== 'grandparents' ||  player2.choice !== 'cat')) {
+      this.winner = player1.name
+      player1.wins ++
+    } else if (player1.choice === 'grandparents' && (player2.choice !== 'children' || player2.choice !== 'cat')) {
+      this.winner = player1.name
+      player1.wins ++
+    } else if (player1.choice === 'cat' && (player2.choice !== 'dog' || player2.choice !== 'children')) {
+      this.winner = player1.name
+      player1.wins ++
+    } else if (player1.choice === 'dog' && (player2.choice !== 'parents' || player2.choice !== 'grandparents')) {
+      this.winner = player1.name
+      player1.wins ++
+    }
+    this.winner = player2.name
+    player2.wins ++
 
   }
   timeOut() {
