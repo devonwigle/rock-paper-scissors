@@ -54,14 +54,6 @@ function showOutcome() {
   addClass(difficultGameView, 'hidden');
 };
 
-function humanChoice() {
-  button.clicked
-};
-
-function computerChoice(array) { //get array from game type in game.js
-  return Math.floor(Math.random() * array.length);
-};
-
 function removeClass(element, rule) {
   element.classList.remove(rule)
 };
