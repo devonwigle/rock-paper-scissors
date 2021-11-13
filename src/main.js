@@ -55,6 +55,7 @@ function showDifficultGame() {
 
 function showDifficultySelector() {
   removeClass(difficultySelectorView, 'hidden');
+  addClass(gameWinner, 'hidden');
   addClass(classicGameView, 'hidden');
   addClass(difficultGameView, 'hidden');
 };
