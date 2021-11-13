@@ -13,12 +13,7 @@ var parentsButton = document.querySelector('#parents');
 var grandparentsButton = document.querySelector('#grandparents');
 var catButton = document.querySelector('#cat');
 var dogButton = document.querySelector('#dog');
-//arrays
-var classicOptions = [children, parents, grandparents];
-var difficultOptions = [children, parents, grandparents, cat, dog];
-// players
-var computer = {};
-var human = {};
+
 
 //eventListeners
 classicDifficultyButton.addEventListener('click', showClassicGame);
@@ -51,15 +46,6 @@ function showOutcome() {
   removeClass(outcomeGameView, 'hidden');
   addClass(classicGameView, 'hidden');
   addClass(difficultGameView, 'hidden');
-};
-
-function humanChoice() {
-  button.clicked
-  var hChoice = button.value
-};
-
-function computerChoice(array) { //get array from game type in game.js
-  return Math.floor(Math.random() * array.length);
 };
 
 function displayChoices(humanChoice, computerChoice) {
