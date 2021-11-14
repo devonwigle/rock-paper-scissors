@@ -2,7 +2,7 @@ class Player {
   constructor(name, token) {
     this.name = name;
     this.token = token;
-    this.wins = 0;
+    this.wins = localStorage.getItem(`${this.name} wins`) || 0;
     this.choice = '';
     this.src = '';
   }
@@ -10,7 +10,7 @@ class Player {
     localStorage.setItem(`${this.name} wins`, this.wins);
   }
   retrieveWinsFromStorage() {
-
+    this.wins = localStorage.getItem(`${this.name} wins`);
   }
   takeTurn(choice) {
     if (choice) {
