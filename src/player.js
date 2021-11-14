@@ -7,7 +7,7 @@ class Player {
     this.src = '';
   }
   saveWinsToStorage() {
-
+    localStorage.setItem(`${this.name} wins`, this.wins);
   }
   retrieveWinsFromStorage() {
 
