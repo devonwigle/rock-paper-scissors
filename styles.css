@@ -7,16 +7,28 @@
 body {
   display: flex;
   justify-content: space-between;
-  margin: none;
+  margin: 0;
   padding: none;
 }
 
 main {
-  display: flex;
-  justify-content: space-between;
-  text-align: center;
-  width: 60%;
-  background-color: #FBB0DD;
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    width: 65%;
+    background-color: #FBB0DD;
+    flex-direction: column;
+}
+
+h1 {
+  margin-top: 5%;
+  font-size: xxx-large;
+  height: 15%;
+}
+
+h2 {
+  height: 10%;
+  margin-top: -7%;
 }
 
 .difficulty-selector {
@@ -24,38 +36,55 @@ main {
   justify-content: center;
 }
 
+.button-box {
+    display: flex;
+    height: 80%;
+    justify-content: space-evenly;
+    margin-top: 30px;
+    flex-wrap: wrap;
+}
+
+.difficult-button-box {
+  margin: 0;
+}
+
 button {
-  height: 120px;
+  height: 32%;
   cursor: pointer;
 }
 
 .game-button {
   height: 150px;
-  width: 200px;
+  width: 250px;
   border: none;
   cursor: pointer;
 }
 
 .button-image {
-  height: 100px;
+  height: 120%;
   width: auto;
   cursor: pointer;
 }
 
 p {
-  font-size: 12px;
+  font-size: 14px;
 }
 
 .player-image {
-  height: 80px;
+  height: 20%;
   width: auto;
+  margin-top: 25%;
 }
 
 aside {
   display: flex;
   justify-content: center;
-  width: 20%;
-  background-color: #FBD4EB
+  width: 15%;
+  background-color: #FBD4EB;
+  flex-direction: column;
+  align-items: center;
+  font-size: x-large;
+  padding-top: 5%;
 }
 
 .hidden {
