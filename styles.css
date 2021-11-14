@@ -7,7 +7,7 @@
 body {
   display: flex;
   justify-content: space-between;
-  margin: none;
+  margin: 0;
   padding: none;
 }
 
@@ -55,7 +55,9 @@ aside {
   display: flex;
   justify-content: center;
   width: 20%;
-  background-color: #FBD4EB
+  background-color: #FBD4EB;
+  flex-direction: column;
+  align-items: center;
 }
 
 .hidden {
