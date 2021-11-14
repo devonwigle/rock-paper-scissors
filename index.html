@@ -3,25 +3,26 @@
   <head>
     <link rel="stylesheet" href="./styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@500&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@500&display=swap" rel="stylesheet">
   </head>
   <body>
     <aside>Human
-      <img class="player-image" src="./assets/pirate.svg" alt="Person with long hair and tricorner hat with skull and crossbones" />
-      <button>Change difficulty?</button>
+      <img class="player-image" src="./assets/astronaut.svg" alt="Astronaut helmet with face looking left" />
+      <p class="human-wins">Wins: 0</p>
+      <button class="change-difficulty hidden">Change difficulty?</button>
     </aside>
     <main>
       <h1>Grandparent, Parent, Child</h1>
-      <section class="hidden" "difficulty-selector">
-        <button class="game-button">
-          <h3>Classic 
+      <section class="difficulty-selector-view">
+        <button class="game-button classic-difficulty-selector">
+          <h3>Classic
             <p>Children &gt; Grandparents<br>
             Parents &gt; Children<br>
             Grandparents &gt; Parents</p>
           </h3>
         </button>
-        <button class="game-button">
+        <button class="game-button difficult-difficulty-selector">
           <h3>Difficult
             <p>Children &gt; Grandparents & Cat<br>
             Parents &gt; Children & Dog<br>
@@ -31,29 +32,39 @@
           </h3>
         </button>
       </section>
-      <section >
-        <button>children
+      <section class="classic-game-view hidden">
+        <button class="classic" name="children" id="children" value="children">
           <img class="button-image" src="./assets/children.svg" alt="two small human stick figures raising their arms"/>
         </button>
-        <button>parents
+        <button class="classic" name="parents" id="parents">
           <img class="button-image" src="./assets/parents.svg" alt="two adult stick figures holding hands"/>
         </button>
-        <button>grandparents
+        <button class="classic" name="grandparents" id="grandparents">
           <img class="button-image" src="./assets/grandparents.svg" alt="Two stick figures with canes in front of trees"/>
         </button>
-        <button>cat
-          <img class="button-image" src="./assets/cat.svg" alt="sitting cat with collar and curved tail"/>
+      </section>
+      <section class="difficult-game-view hidden">
+        <button name="cat" id="cat">
+          <img class="button-image " src="./assets/cat.svg" alt="sitting cat with collar and curved tail"/>
         </button>
-        <button>dog
-          <img class="button-image" src="./assets/dog.svg" alt="sitting dog with curved tail"/>
+        <button name="dog" id="dog">
+          <img class="button-image hidden" src="./assets/dog.svg" alt="sitting dog with curved tail"/>
         </button>
+      </section>
+      <section class="outcome-game-view hidden">
+        <h2 class="game-winner">Winner</h2>
+        <section class="selected-image-box">
+          <img class="game-button" src="" />
+          <img class="game-button" src="" />
+        </section>
       </section>
     </main>
     <aside>Computer
       <img class="player-image" src="./assets/computer.svg" alt="black and white laptop computer"/>
+      <p class="computer-wins">Wins: 0</p>
     </aside>
+    <script type="text/javascript" src="./src/player.js"></script>
+    <script type="text/javascript" src="./src/game.js"></script>
+    <script type="text/javascript" src="./src/main.js"></script>
   </body>
-  <script type="text/javascript" src="./src/main.js"</script>
-  <script type="text/javascript" src="./src/game.js"</script>
-  <script type="text/javascript" src="./src/player.js"</script>
 </html>

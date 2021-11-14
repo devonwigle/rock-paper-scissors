@@ -1,8 +1,10 @@
 class Player {
-  constructor(name, token, wins) {
-    this.name = name
-    this.token = token // selected player icon
-    this.wins = wins
+  constructor(name, token) {
+    this.name = name;
+    this.token = token;
+    this.wins = 0;
+    this.choice = '';
+    this.src = '';
   }
   saveWinsToStorage() {
 
@@ -10,7 +12,15 @@ class Player {
   retrieveWinsFromStorage() {
 
   }
-  takeTurn() {
-    
+  takeTurn(choice) {
+    if (choice) {
+      this.choice = choice
+      this.src = `./assets/${this.choice}.svg`
+    } else if (!choice) {
+      this.choice = game.choices[Math.floor(Math.random() * game.choices.length)]
+      this.src = `./assets/${this.choice}.svg`
+    }
   }
+// }if (`game.${players[i]}.choice` === 'children') {
+//   `${player[i]}.src = "./assets/children.svg"`
 }
