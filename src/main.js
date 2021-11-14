@@ -1,6 +1,5 @@
 //variables
 var game = new Game()
-var selectedImageBox = document.querySelector('.selected-image-box');
 var player1Outcome = document.querySelector('.player1-outcome');
 var player2Outcome = document.querySelector('.player2-outcome');
 var humanWins = document.querySelector('.human-wins');
@@ -63,11 +62,10 @@ function showDifficultGame() {
 function showDifficultySelector() {
   tagline.innerText = "Choose your family"
   removeClass([difficultySelectorView], 'hidden');
-  addClass([changeDifficulty, classicGameView, difficultGameView], 'hidden');
+  addClass([changeDifficulty, classicGameView, difficultGameView, outcomeGameView], 'hidden');
 };
 
 function showOutcome(choice) {
-  selectedImageBox = ''
   var p1Image = game.player1.src
   game.player1.takeTurn(choice);
   game.player2.takeTurn();
