@@ -46,10 +46,9 @@ class Game {
     return `${game.player2.name} wins!`
 
   }
-  // timeOut() {
-  //   setTimeout(timeout);
-  //   timeout = setTimeout(function() {
-  //     if (showOutcome)
-  //   })
-  // }
+
+  timer(view) {
+    setTimeout(view, 2000);
+  }
+
 }
