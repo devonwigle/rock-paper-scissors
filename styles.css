@@ -82,6 +82,10 @@ p {
   font-size: 14px;
 }
 
+.human-wins {
+  height: 30px;
+}
+
 .player-image {
   height: 20%;
   width: auto;
