@@ -12,11 +12,12 @@ body {
 }
 
 main {
-  display: flex;
-  justify-content: space-between;
-  text-align: center;
-  width: 60%;
-  background-color: #FBB0DD;
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    width: 60%;
+    background-color: #FBB0DD;
+    flex-direction: column;
 }
 
 .difficulty-selector {
