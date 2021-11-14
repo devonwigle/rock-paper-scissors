@@ -1,6 +1,5 @@
 //variables
 var game = new Game()
-var gameWinner = document.querySelector('.game-winner');
 var selectedImageBox = document.querySelector('.selected-image-box');
 var humanWins = document.querySelector('.human-wins');
 var computerWins = document.querySelector('.computer-wins');
@@ -62,7 +61,7 @@ function showDifficultGame() {
 function showDifficultySelector() {
   tagline.innerText = "Choose your family"
   removeClass([difficultySelectorView], 'hidden');
-  addClass([changeDifficulty, gameWinner, classicGameView, difficultGameView], 'hidden');
+  addClass([changeDifficulty, classicGameView, difficultGameView], 'hidden');
 };
 
 function showOutcome(choice) {
@@ -70,7 +69,7 @@ function showOutcome(choice) {
   var p1Image = game.player1.src
   game.player1.takeTurn(choice);
   game.player2.takeTurn();
-  gameWinner.innerText = game.winConditions();
+  tagline.innerText = game.winConditions();
   humanWins.innerText = `Wins: ${game.player1.wins}`;
   computerWins.innerText = `Wins: ${game.player2.wins}`;
   selectedImageBox.innerHTML = `
@@ -78,7 +77,7 @@ function showOutcome(choice) {
     <img class="game-button" src="${game.player2.src}"
   `
   removeClass([outcomeGameView, changeDifficulty], 'hidden');
-  addClass([classicGameView, tagline, difficultGameView], 'hidden');
+  addClass([classicGameView, difficultGameView], 'hidden');
 };
 
 function removeClass(elements, rule) {
