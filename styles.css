@@ -31,11 +31,13 @@ h2 {
   margin-top: -7%;
 }
 
+.outcome-game-view,
 .difficulty-selector {
   display: flex;
   justify-content: center;
 }
 
+.outcome-box,
 .button-box {
     display: flex;
     height: 80%;
@@ -45,6 +47,10 @@ h2 {
 }
 
 .difficult-button-box {
+  margin: 0;
+}
+
+.outcome-box {
   margin: 0;
 }
 
@@ -62,8 +68,14 @@ button {
 
 .button-image {
   height: 120%;
-  width: auto;
+  width: auto
   cursor: pointer;
+}
+
+.player1-outcome,
+.player2-outcome {
+  height: 50%;
+  margin: 40px;
 }
 
 p {
