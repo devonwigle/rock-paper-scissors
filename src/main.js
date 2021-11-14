@@ -41,6 +41,11 @@ catButton.addEventListener('click', function() {
 dogButton.addEventListener('click', function() {
   showOutcome('dog')
 });
+window.addEventListener('load', function() {
+  game = new Game();
+  humanWins.innerText = `Wins: ${game.player1.wins}`;
+  computerWins.innerText = `Wins: ${game.player2.wins}`;
+});
 
 //functions
 function showClassicGame() {

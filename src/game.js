@@ -23,26 +23,38 @@ class Game {
     } else if (game.player1.choice === 'children' && (game.player2.choice !== 'parents') && (game.player2.choice !== 'dog')) {
       this.winner = game.player1.name
       game.player1.wins++
+      this.player1.saveWinsToStorage();
+      this.player2.saveWinsToStorage();
       return `${game.player1.name} wins!`
     } else if (game.player1.choice === 'parents' && (game.player2.choice !== 'grandparents') && (game.player2.choice !== 'cat')) {
       this.winner = game.player1.name
       game.player1.wins++
+      this.player1.saveWinsToStorage();
+      this.player2.saveWinsToStorage();
       return `${game.player1.name} wins!`
     } else if (game.player1.choice === 'grandparents' && (game.player2.choice !== 'children') && (game.player2.choice !== 'cat')) {
       this.winner = game.player1.name
       game.player1.wins++
+      this.player1.saveWinsToStorage();
+      this.player2.saveWinsToStorage();
       return `${game.player1.name} wins!`
     } else if (game.player1.choice === 'cat' && (game.player2.choice !== 'dog') && (game.player2.choice !== 'children')) {
       this.winner = game.player1.name
       game.player1.wins++
+      this.player1.saveWinsToStorage();
+      this.player2.saveWinsToStorage();
       return `${game.player1.name} wins!`
     } else if (game.player1.choice === 'dog' && (game.player2.choice !== 'parents') && (game.player2.choice !== 'grandparents')) {
       this.winner = game.player1.name
       game.player1.wins++
+      this.player1.saveWinsToStorage();
+      this.player2.saveWinsToStorage();
       return `${game.player1.name} wins!`
     }
     this.winner = game.player2.name
     game.player2.wins ++
+    this.player1.saveWinsToStorage();
+    this.player2.saveWinsToStorage();
     return `${game.player2.name} wins!`
 
   }
