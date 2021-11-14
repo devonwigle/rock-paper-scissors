@@ -18,9 +18,11 @@ var changeDifficulty = document.querySelector('.change-difficulty')
 var childrenButton = document.querySelector('#children');
 var parentsButton = document.querySelector('#parents');
 var grandparentsButton = document.querySelector('#grandparents');
+var difficultChildrenButton = document.querySelector('#difficultChildren');
+var difficultParentsButton = document.querySelector('#difficultParents');
+var difficultGrandparentsButton = document.querySelector('#difficultGrandparents');
 var catButton = document.querySelector('#cat');
 var dogButton = document.querySelector('#dog');
-
 
 //eventListeners
 classicDifficultyButton.addEventListener('click', showClassicGame);
@@ -33,6 +35,15 @@ parentsButton.addEventListener('click', function() {
   showOutcome('parents')
 });
 grandparentsButton.addEventListener('click', function() {
+  showOutcome('grandparents')
+});
+difficultChildrenButton.addEventListener('click', function() {
+  showOutcome('children')
+});
+difficultParentsButton.addEventListener('click', function() {
+  showOutcome('parents')
+});
+difficultGrandparentsButton.addEventListener('click', function() {
   showOutcome('grandparents')
 });
 catButton.addEventListener('click', function() {
