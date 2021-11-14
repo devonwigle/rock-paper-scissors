@@ -41,6 +41,11 @@ h2 {
     height: 80%;
     justify-content: space-evenly;
     margin-top: 30px;
+    flex-wrap: wrap;
+}
+
+.difficult-button-box {
+  margin: 0;
 }
 
 button {
