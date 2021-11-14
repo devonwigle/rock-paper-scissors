@@ -51,8 +51,8 @@ function showClassicGame() {
 };
 
 function showDifficultGame() {
-  addClass([difficultySelectorView], 'hidden');
-  removeClass([classicGameView, difficultGameView], 'hidden');
+  addClass([classicGameView, difficultySelectorView], 'hidden');
+  removeClass([difficultGameView], 'hidden');
   tagline.innerText = "Choose your family member"
   game.type = 'difficult';
   game.trackData();
