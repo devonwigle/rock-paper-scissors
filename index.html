@@ -15,7 +15,7 @@
     <main>
       <h1>Grandparent, Parent, Child</h1>
       <h2>Choose your family</h2>
-      <section class="difficulty-selector-view">
+      <section class="difficulty-selector-view hidden">
         <section class= "button-box">
           <button class="game-button classic-difficulty-selector">
             <h3>Classic
@@ -35,24 +35,28 @@
           </button>
         </section>
       </section>
-      <section class="classic-game-view hidden">
-        <button class="classic" name="children" id="children" value="children">
-          <img class="button-image" src="./assets/children.svg" alt="two small human stick figures raising their arms"/>
-        </button>
-        <button class="classic" name="parents" id="parents">
-          <img class="button-image" src="./assets/parents.svg" alt="two adult stick figures holding hands"/>
-        </button>
-        <button class="classic" name="grandparents" id="grandparents">
-          <img class="button-image" src="./assets/grandparents.svg" alt="Two stick figures with canes in front of trees"/>
-        </button>
+      <section class="classic-game-view ">
+        <section class= "button-box">
+          <button class="classic" name="children" id="children" value="children">
+            <img class="button-image" src="./assets/children.svg" alt="two small human stick figures raising their arms"/>
+          </button>
+          <button class="classic" name="parents" id="parents">
+            <img class="button-image" src="./assets/parents.svg" alt="two adult stick figures holding hands"/>
+          </button>
+          <button class="classic" name="grandparents" id="grandparents">
+            <img class="button-image" src="./assets/grandparents.svg" alt="Two stick figures with canes in front of trees"/>
+          </button>
+        </section>
       </section>
       <section class="difficult-game-view hidden">
-        <button name="cat" id="cat">
-          <img class="button-image " src="./assets/cat.svg" alt="sitting cat with collar and curved tail"/>
-        </button>
-        <button name="dog" id="dog">
-          <img class="button-image hidden" src="./assets/dog.svg" alt="sitting dog with curved tail"/>
-        </button>
+        <section class= "button-box">
+          <button name="cat" id="cat">
+            <img class="button-image " src="./assets/cat.svg" alt="sitting cat with collar and curved tail"/>
+          </button>
+          <button name="dog" id="dog">
+            <img class="button-image hidden" src="./assets/dog.svg" alt="sitting dog with curved tail"/>
+          </button>
+        </section>
       </section>
       <section class="outcome-game-view hidden">
         <h2 class="game-winner">Winner</h2>
