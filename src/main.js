@@ -76,6 +76,7 @@ function showOutcome(choice) {
   player2Outcome.src = `${game.player2.src}`;
   removeClass([outcomeGameView, changeDifficulty], 'hidden');
   addClass([classicGameView, difficultGameView], 'hidden');
+  game.timer(showDifficultySelector)
 };
 
 function removeClass(elements, rule) {
