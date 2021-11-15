@@ -12,12 +12,12 @@ body {
 }
 
 main {
-    display: flex;
-    justify-content: space-between;
-    text-align: center;
-    width: 65%;
-    background-color: #FBB0DD;
-    flex-direction: column;
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+  width: 65%;
+  background-color: #FBB0DD;
+  flex-direction: column;
 }
 
 h1 {
@@ -29,6 +29,12 @@ h1 {
 h2 {
   height: 10%;
   margin-top: -7%;
+}
+
+.difficult,
+.classic{
+  background-color: #FBB0DD;
+  border: 0;
 }
 
 .outcome-game-view,
@@ -62,20 +68,35 @@ button {
 .game-button {
   height: 150px;
   width: 250px;
-  border: none;
-  cursor: pointer;
 }
+
 
 .button-image {
   height: 120%;
-  width: auto
+  width: auto;
+  background-color: #FBB0DD;
+  border: white 5px;
   cursor: pointer;
+}
+
+.token-box {
+  height: 20px;
+}
+
+.control-button {
+  border-radius: 5px;
+  margin: 10px;
 }
 
 .player1-outcome,
 .player2-outcome {
   height: 50%;
   margin: 40px;
+}
+
+.game-control-box {
+  display: flex;
+  flex-direction: column;
 }
 
 p {
