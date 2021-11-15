@@ -59,8 +59,13 @@ class Game {
 
   }
 
-  timer(view) {
-    setTimeout(view, 2000);
+  resetGame() {
+    if (game.type === 'classic') {
+      showClassicGame()
+    } else if (game.type === 'difficult') {
+      showDifficultGame()
+    }
+    addClass([outcomeGameView], 'hidden')
   }
 
 }

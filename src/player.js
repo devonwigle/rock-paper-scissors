@@ -21,6 +21,4 @@ class Player {
       this.src = `./assets/${this.choice}.svg`
     }
   }
-// }if (`game.${players[i]}.choice` === 'children') {
-//   `${player[i]}.src = "./assets/children.svg"`
 }
