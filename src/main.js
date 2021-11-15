@@ -68,7 +68,7 @@ function showClassicGame() {
 };
 
 function showDifficultGame() {
-  addClass([classicGameView, difficultySelectorView], 'hidden');
+  addClass([classicGameView, difficultySelectorView, outcomeGameView], 'hidden');
   removeClass([difficultGameView], 'hidden');
   tagline.innerText = "Choose your family member"
   game.type = 'difficult';
@@ -82,7 +82,6 @@ function showDifficultySelector() {
 };
 
 function showOutcome(choice) {
-  var p1Image = game.player1.src
   game.player1.takeTurn(choice);
   game.player2.takeTurn();
   tagline.innerText = game.winConditions();
@@ -92,7 +91,7 @@ function showOutcome(choice) {
   player2Outcome.src = `${game.player2.src}`;
   removeClass([outcomeGameView, changeDifficulty], 'hidden');
   addClass([classicGameView, difficultGameView], 'hidden');
-  game.timer(showDifficultySelector)
+  setTimeout(game.resetGame, 2000);
 };
 
 function removeClass(elements, rule) {
