@@ -6,6 +6,7 @@ var humanWins = document.querySelector('.human-wins');
 var computerWins = document.querySelector('.computer-wins');
 var players = ['player1', 'player2'];
 var tagline = document.querySelector('h2');
+var tokenBox = document.querySelector('.token-box');
 //views
 var difficultySelectorView = document.querySelector('.difficulty-selector-view');
 var classicGameView = document.querySelector('.classic-game-view');
@@ -14,7 +15,7 @@ var outcomeGameView = document.querySelector('.outcome-game-view')
 //buttons
 var difficultDifficultyButton = document.querySelector('.difficult-difficulty-selector');
 var classicDifficultyButton = document.querySelector('.classic-difficulty-selector');
-var changeDifficulty = document.querySelector('.change-difficulty')
+var gameControlBox = document.querySelector('.game-control-box')
 var childrenButton = document.querySelector('#children');
 var parentsButton = document.querySelector('#parents');
 var grandparentsButton = document.querySelector('#grandparents');
@@ -27,9 +28,9 @@ var dogButton = document.querySelector('#dog');
 //eventListeners
 classicDifficultyButton.addEventListener('click', showClassicGame);
 difficultDifficultyButton.addEventListener('click', showDifficultGame);
-changeDifficulty.addEventListener('click', showDifficultySelector);
+gameControlBox.addEventListener('click', showDifficultySelector);
 childrenButton.addEventListener('click', function() {
-  showOutcome('children')
+  showOutcome('children');
 });
 parentsButton.addEventListener('click', function() {
   showOutcome('parents')
@@ -73,25 +74,38 @@ function showDifficultGame() {
   tagline.innerText = "Choose your family member"
   game.type = 'difficult';
   game.trackData();
-}
+};
 
 function showDifficultySelector() {
   tagline.innerText = "Choose your family"
   removeClass([difficultySelectorView], 'hidden');
-  addClass([changeDifficulty, classicGameView, difficultGameView, outcomeGameView], 'hidden');
+  addClass([gameControlBox, classicGameView, difficultGameView, outcomeGameView], 'hidden');
 };
 
 function showOutcome(choice) {
   game.player1.takeTurn(choice);
   game.player2.takeTurn();
+  showToken();
+  setTimeout(changeViewability, 1000);
+  setTimeout(updateInfo, 1000);
+  setTimeout(game.resetGame, 4000);
+};
+
+function showToken() {
+  removeClass([tokenBox], 'hidden');
+};
+
+function updateInfo() {
   tagline.innerText = game.winConditions();
   humanWins.innerText = `Wins: ${game.player1.wins}`;
   computerWins.innerText = `Wins: ${game.player2.wins}`;
   player1Outcome.src = `${game.player1.src}`;
   player2Outcome.src = `${game.player2.src}`;
-  removeClass([outcomeGameView, changeDifficulty], 'hidden');
-  addClass([classicGameView, difficultGameView], 'hidden');
-  setTimeout(game.resetGame, 2000);
+};
+
+function changeViewability() {
+  removeClass([outcomeGameView, gameControlBox], 'hidden');
+  addClass([classicGameView, difficultGameView, tokenBox], 'hidden');
 };
 
 function removeClass(elements, rule) {
