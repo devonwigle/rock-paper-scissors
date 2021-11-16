@@ -186,7 +186,3 @@ function addClass(elements, rule) {
       elements[i].classList.add(rule)
   }
 };
-
-function toggleClass(element) {
-  element.classList.toggle(element)
-}
