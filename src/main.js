@@ -1,5 +1,5 @@
 //variables
-var game = new Game()
+var game = new Game();
 var player1Outcome = document.querySelector('.player1-outcome');
 var player2Outcome = document.querySelector('.player2-outcome');
 var humanWins = document.querySelector('.human-wins');
@@ -11,11 +11,13 @@ var tokenBox = document.querySelector('.token-box');
 var difficultySelectorView = document.querySelector('.difficulty-selector-view');
 var classicGameView = document.querySelector('.classic-game-view');
 var difficultGameView = document.querySelector('.difficult-game-view');
-var outcomeGameView = document.querySelector('.outcome-game-view')
+var outcomeGameView = document.querySelector('.outcome-game-view');
 //buttons
 var difficultDifficultyButton = document.querySelector('.difficult-difficulty-selector');
 var classicDifficultyButton = document.querySelector('.classic-difficulty-selector');
-var gameControlBox = document.querySelector('.game-control-box')
+var clearWins = document.querySelector('#clearWins');
+var changeDifficulty = document.querySelector('#changeDifficulty')
+var gameControlBox = document.querySelector('.game-control-box');
 var childrenButton = document.querySelector('#children');
 var parentsButton = document.querySelector('#parents');
 var grandparentsButton = document.querySelector('#grandparents');
@@ -24,11 +26,19 @@ var difficultParentsButton = document.querySelector('#difficultParents');
 var difficultGrandparentsButton = document.querySelector('#difficultGrandparents');
 var catButton = document.querySelector('#cat');
 var dogButton = document.querySelector('#dog');
-
+var tokenBox = document.querySelectorAll('.token-box')
+// tokens
+var childrenToken = document.querySelector('#childrenToken');
+var parentsToken = document.querySelector('#parentsToken');
+var grandparentsToken = document.querySelector('#grandparentsToken');
+var difficultChildrenToken = document.querySelector('#difficultChildrenToken');
+var difficultParentsToken = document.querySelector('#difficultParentsToken');
+var difficultGrandparentsToken = document.querySelector('#difficultGrandparentsToken');
 //eventListeners
 classicDifficultyButton.addEventListener('click', showClassicGame);
 difficultDifficultyButton.addEventListener('click', showDifficultGame);
-gameControlBox.addEventListener('click', showDifficultySelector);
+changeDifficulty.addEventListener('click', showDifficultySelector);
+clearWins.addEventListener('click', clearLocalWins);
 childrenButton.addEventListener('click', function() {
   showOutcome('children');
 });
@@ -39,13 +49,13 @@ grandparentsButton.addEventListener('click', function() {
   showOutcome('grandparents')
 });
 difficultChildrenButton.addEventListener('click', function() {
-  showOutcome('children')
+  showOutcome('difficultChildren')
 });
 difficultParentsButton.addEventListener('click', function() {
-  showOutcome('parents')
+  showOutcome('difficultParents')
 });
 difficultGrandparentsButton.addEventListener('click', function() {
-  showOutcome('grandparents')
+  showOutcome('difficultGrandparents')
 });
 catButton.addEventListener('click', function() {
   showOutcome('cat')
@@ -85,17 +95,28 @@ function showDifficultySelector() {
 function showOutcome(choice) {
   game.player1.takeTurn(choice);
   game.player2.takeTurn();
-  showToken();
+  showToken(`${choice}Token`);
   setTimeout(changeViewability, 1000);
   setTimeout(updateInfo, 1000);
-  setTimeout(game.resetGame, 4000);
+  setTimeout(game.resetGame, 3000);
 };
 
-function showToken() {
-  removeClass([tokenBox], 'hidden');
+function showToken(choice) {
+  var tokenPlace = document.querySelector(`#${choice}`);
+  tokenPlace.src = `./assets/astronaut.svg`;
+  for ( var i = 0; i < tokenBox.length; i++) {
+    removeClass([tokenBox[i]], 'hidden');
+  }
+};
+
+function hideToken(choice) {
+  var tokenPlace = document.querySelector(`#${choice}`);
+  tokenPlace.src = `./assets/astronaut.svg`;
+  addClass([tokenBox], 'hidden');
 };
 
 function updateInfo() {
+  // hideToken(`${choice}Token`);
   tagline.innerText = game.winConditions();
   humanWins.innerText = `Wins: ${game.player1.wins}`;
   computerWins.innerText = `Wins: ${game.player2.wins}`;
@@ -104,8 +125,16 @@ function updateInfo() {
 };
 
 function changeViewability() {
+  // hideToken(`${choice}Token`);
   removeClass([outcomeGameView, gameControlBox], 'hidden');
-  addClass([classicGameView, difficultGameView, tokenBox], 'hidden');
+  addClass([classicGameView, difficultGameView], 'hidden');
+};
+
+function clearLocalWins() {
+  localStorage.clear();
+  game = new Game();
+  humanWins.innerText = `Wins: ${game.player1.wins}`;
+  computerWins.innerText = `Wins: ${game.player2.wins}`;
 };
 
 function removeClass(elements, rule) {
