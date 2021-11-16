@@ -134,9 +134,13 @@ function showToken(choice) {
 }
 
 function hideToken(choice) {
-  console.log("this", difficultChildrenToken.id)
-  console.log("that", `${choice}`)
-  if (difficultChildrenToken.id === `${choice}`) {
+  if (childrenToken.id === `${choice}`) {
+    addClass([childrenToken], 'invisible')
+  } else if (parentsToken.id === `${choice}`) {
+    addClass([parentsToken], 'invisible')
+  } else if (grandparentsToken.id === `${choice}`) {
+    addClass([grandparentsToken], 'invisible')
+  } else if (difficultChildrenToken.id === `${choice}`) {
     addClass([difficultChildrenToken], 'invisible')
   } else if (difficultParentsToken.id === `${choice}`) {
     addClass([difficultParentsToken], 'invisible')
