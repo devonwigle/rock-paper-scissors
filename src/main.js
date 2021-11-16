@@ -76,10 +76,9 @@ window.addEventListener('load', function() {
   computerWins.innerText = `Wins: ${game.player2.wins}`;
 });
 
-//functions
 function showClassicGame() {
-  addClass([difficultySelectorView], 'hidden');
-  removeClass([classicGameView], 'hidden');
+  addClass([difficultySelectorView, catButton, dogButton], 'hidden');
+  removeClass([difficultGameView], 'hidden');
   tagline.innerText = "Choose your family member"
   game.type = 'classic'
   game.trackData();
@@ -87,7 +86,7 @@ function showClassicGame() {
 
 function showDifficultGame() {
   addClass([classicGameView, difficultySelectorView, outcomeGameView], 'hidden');
-  removeClass([difficultGameView], 'hidden');
+  removeClass([difficultGameView, catButton, dogButton], 'hidden');
   tagline.innerText = "Choose your family member"
   game.type = 'difficult';
   game.trackData();
@@ -160,6 +159,8 @@ function updateInfo(choice) {
   computerWins.innerText = `Wins: ${game.player2.wins}`;
   player1Outcome.src = `${game.player1.src}`;
   player2Outcome.src = `${game.player2.src}`;
+  console.log("player1", `${game.player1.src}`)
+  console.log("player2", `${game.player1.src}`)
 };
 
 function changeViewability() {
