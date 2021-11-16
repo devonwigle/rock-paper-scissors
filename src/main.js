@@ -108,9 +108,9 @@ function showOutcome(choice) {
 };
 
 function callTimeouts(choice) {
-  setTimeout(changeViewability, 1000);
-  setTimeout(updateInfo, 1000, choice);
-  setTimeout(game.resetGame, 3000);
+  setTimeout(changeViewability, 300);
+  setTimeout(updateInfo, 300, choice);
+  setTimeout(game.resetGame, 2000);
 }
 
 function showToken(choice) {
