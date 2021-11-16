@@ -6,7 +6,15 @@ var humanWins = document.querySelector('.human-wins');
 var computerWins = document.querySelector('.computer-wins');
 var players = ['player1', 'player2'];
 var tagline = document.querySelector('h2');
-var tokenBox = document.querySelector('.token-box');
+//var tokenBox = document.querySelectorAll('.token-box')
+var childrenToken = document.querySelector('#childrenToken');
+var parentsToken = document.querySelector('#parentsToken');
+var grandparentsToken = document.querySelector('#grandparentsToken');
+var difficultChildrenToken = document.querySelector('#difficultChildrenToken');
+var difficultParentsToken = document.querySelector('#difficultParentsToken');
+var difficultGrandparentsToken = document.querySelector('#difficultGrandparentsToken');
+var catToken = document.querySelector('#catToken');
+var dogToken = document.querySelector('#dogToken');
 //views
 var difficultySelectorView = document.querySelector('.difficulty-selector-view');
 var classicGameView = document.querySelector('.classic-game-view');
@@ -26,7 +34,6 @@ var difficultParentsButton = document.querySelector('#difficultParents');
 var difficultGrandparentsButton = document.querySelector('#difficultGrandparents');
 var catButton = document.querySelector('#cat');
 var dogButton = document.querySelector('#dog');
-var tokenBox = document.querySelectorAll('.token-box')
 // tokens
 var childrenToken = document.querySelector('#childrenToken');
 var parentsToken = document.querySelector('#parentsToken');
@@ -89,34 +96,61 @@ function showDifficultGame() {
 function showDifficultySelector() {
   tagline.innerText = "Choose your family"
   removeClass([difficultySelectorView], 'hidden');
-  addClass([gameControlBox, classicGameView, difficultGameView, outcomeGameView], 'hidden');
+  addClass([classicGameView, difficultGameView, outcomeGameView], 'hidden');
+  addClass([gameControlBox], 'invisible')
 };
 
 function showOutcome(choice) {
   game.player1.takeTurn(choice);
   game.player2.takeTurn();
   showToken(`${choice}Token`);
-  setTimeout(changeViewability, 1000);
-  setTimeout(updateInfo, 1000);
-  setTimeout(game.resetGame, 3000);
+  callTimeouts(`${choice}Token`);
 };
+
+function callTimeouts(choice) {
+  setTimeout(changeViewability, 1000);
+  setTimeout(updateInfo, 1000, choice);
+  setTimeout(game.resetGame, 3000);
+}
 
 function showToken(choice) {
-  var tokenPlace = document.querySelector(`#${choice}`);
-  tokenPlace.src = `./assets/astronaut.svg`;
-  for ( var i = 0; i < tokenBox.length; i++) {
-    removeClass([tokenBox[i]], 'hidden');
+  if (childrenToken.id === `${choice}`) {
+    removeClass([childrenToken], 'invisible')
+  } else if (parentsToken.id === `${choice}`) {
+    removeClass([parentsToken], 'invisible')
+  } else if (grandparentsToken.id === `${choice}`) {
+    removeClass([grandparentsToken], 'invisible')
+  } else if (difficultChildrenToken.id === `${choice}`) {
+    removeClass([difficultChildrenToken], 'invisible')
+  } else if (difficultParentsToken.id === `${choice}`) {
+    removeClass([difficultParentsToken], 'invisible')
+  } else if (difficultGrandparentsToken.id === `${choice}`) {
+    removeClass([difficultGrandparentsToken], 'invisible')
+  } else if (catToken.id === `${choice}`) {
+    removeClass([catToken], 'invisible')
+  } else if (dogToken.id === `${choice}`) {
+    removeClass([dogToken], 'invisible')
   }
-};
+}
 
 function hideToken(choice) {
-  var tokenPlace = document.querySelector(`#${choice}`);
-  tokenPlace.src = `./assets/astronaut.svg`;
-  addClass([tokenBox], 'hidden');
-};
+  console.log("this", difficultChildrenToken.id)
+  console.log("that", `${choice}`)
+  if (difficultChildrenToken.id === `${choice}`) {
+    addClass([difficultChildrenToken], 'invisible')
+  } else if (difficultParentsToken.id === `${choice}`) {
+    addClass([difficultParentsToken], 'invisible')
+  } else if (difficultGrandparentsToken.id === `${choice}`) {
+    addClass([difficultGrandparentsToken], 'invisible')
+  } else if (catToken.id === `${choice}`) {
+    addClass([catToken], 'invisible')
+  } else if (dogToken.id === `${choice}`) {
+    addClass([dogToken], 'invisible')
+  }
+}
 
-function updateInfo() {
-  // hideToken(`${choice}Token`);
+function updateInfo(choice) {
+  hideToken(choice);
   tagline.innerText = game.winConditions();
   humanWins.innerText = `Wins: ${game.player1.wins}`;
   computerWins.innerText = `Wins: ${game.player2.wins}`;
@@ -125,8 +159,8 @@ function updateInfo() {
 };
 
 function changeViewability() {
-  // hideToken(`${choice}Token`);
-  removeClass([outcomeGameView, gameControlBox], 'hidden');
+  removeClass([outcomeGameView], 'hidden');
+  removeClass([gameControlBox], 'invisible')
   addClass([classicGameView, difficultGameView], 'hidden');
 };
 
@@ -148,3 +182,7 @@ function addClass(elements, rule) {
       elements[i].classList.add(rule)
   }
 };
+
+function toggleClass(element) {
+  element.classList.toggle(element)
+}
