@@ -66,6 +66,9 @@ class Game {
       showDifficultGame()
     }
     addClass([outcomeGameView], 'hidden')
+    for ( var i = 0; i < tokenBox.length; i++) {
+      addClass([tokenBox[i]], 'hidden');
+    }
   }
 
 }
