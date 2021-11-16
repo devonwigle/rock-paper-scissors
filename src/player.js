@@ -17,8 +17,13 @@ class Player {
       this.choice = choice
       this.src = `./assets/${this.choice}.svg`
     } else if (!choice) {
-      this.choice = game.choices[Math.floor(Math.random() * game.choices.length)]
-      this.src = `./assets/${this.choice}.svg`
+      if (game.type === 'classic') {
+        this.choice = game.choices[Math.floor(Math.random() * 3)]
+        console.log("computer", this.choice)
+      } else if (game.type === 'difficult') {
+        this.choice = game.choices[Math.floor(Math.random() * 5 + 3)]
+        this.src = `./assets/${this.choice}.svg`
+      }
     }
   }
 }
