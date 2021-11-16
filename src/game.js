@@ -9,9 +9,9 @@ class Game {
 
   trackData() {
     var classics = ['children', 'parents', 'grandparents'];
-    var difficults = ['children', 'parents', 'grandparents', 'dog', 'cat'];
+    var difficults = ['children', 'parents', 'grandparents', 'difficultChildren', 'difficultParents', 'difficultGrandparents', 'dog', 'cat'];
     if (this.type === 'classic') {
-      this.choices = classics
+      this.choices = difficults
     } else if (this.type === 'difficult')
     this.choices = difficults
   }
