@@ -10,9 +10,9 @@ var tagline = document.querySelector('h2');
 var childrenToken = document.querySelector('#childrenToken');
 var parentsToken = document.querySelector('#parentsToken');
 var grandparentsToken = document.querySelector('#grandparentsToken');
-var difficultChildrenToken = document.querySelector('#difficultChildrenToken');
-var difficultParentsToken = document.querySelector('#difficultParentsToken');
-var difficultGrandparentsToken = document.querySelector('#difficultGrandparentsToken');
+var difficultChildrenToken = document.querySelector('#difficultchildrenToken');
+var difficultParentsToken = document.querySelector('#difficultparentsToken');
+var difficultGrandparentsToken = document.querySelector('#difficultgrandparentsToken');
 var catToken = document.querySelector('#catToken');
 var dogToken = document.querySelector('#dogToken');
 //views
@@ -38,14 +38,13 @@ var dogButton = document.querySelector('#dog');
 var childrenToken = document.querySelector('#childrenToken');
 var parentsToken = document.querySelector('#parentsToken');
 var grandparentsToken = document.querySelector('#grandparentsToken');
-var difficultChildrenToken = document.querySelector('#difficultChildrenToken');
-var difficultParentsToken = document.querySelector('#difficultParentsToken');
-var difficultGrandparentsToken = document.querySelector('#difficultGrandparentsToken');
+var difficultchildrenToken = document.querySelector('#difficultchildrenToken');
+var difficultparentsToken = document.querySelector('#difficultparentsToken');
+var difficultgrandparentsToken = document.querySelector('#difficultgrandparentsToken');
 //eventListeners
 classicDifficultyButton.addEventListener('click', showClassicGame);
 difficultDifficultyButton.addEventListener('click', showDifficultGame);
 changeDifficulty.addEventListener('click', showDifficultySelector);
-clearWins.addEventListener('click', clearLocalWins);
 childrenButton.addEventListener('click', function() {
   showOutcome('children');
 });
@@ -119,12 +118,12 @@ function showToken(choice) {
     removeClass([parentsToken], 'invisible')
   } else if (grandparentsToken.id === `${choice}`) {
     removeClass([grandparentsToken], 'invisible')
-  } else if (difficultChildrenToken.id === `${choice}`) {
-    removeClass([difficultChildrenToken], 'invisible')
-  } else if (difficultParentsToken.id === `${choice}`) {
-    removeClass([difficultParentsToken], 'invisible')
-  } else if (difficultGrandparentsToken.id === `${choice}`) {
-    removeClass([difficultGrandparentsToken], 'invisible')
+  } else if (difficultchildrenToken.id === `${choice}`) {
+    removeClass([difficultchildrenToken], 'invisible')
+  } else if (difficultparentsToken.id === `${choice}`) {
+    removeClass([difficultparentsToken], 'invisible')
+  } else if (difficultgrandparentsToken.id === `${choice}`) {
+    removeClass([difficultgrandparentsToken], 'invisible')
   } else if (catToken.id === `${choice}`) {
     removeClass([catToken], 'invisible')
   } else if (dogToken.id === `${choice}`) {
@@ -139,12 +138,12 @@ function hideToken(choice) {
     addClass([parentsToken], 'invisible')
   } else if (grandparentsToken.id === `${choice}`) {
     addClass([grandparentsToken], 'invisible')
-  } else if (difficultChildrenToken.id === `${choice}`) {
-    addClass([difficultChildrenToken], 'invisible')
-  } else if (difficultParentsToken.id === `${choice}`) {
-    addClass([difficultParentsToken], 'invisible')
-  } else if (difficultGrandparentsToken.id === `${choice}`) {
-    addClass([difficultGrandparentsToken], 'invisible')
+  } else if (difficultchildrenToken.id === `${choice}`) {
+    addClass([difficultchildrenToken], 'invisible')
+  } else if (difficultparentsToken.id === `${choice}`) {
+    addClass([difficultparentsToken], 'invisible')
+  } else if (difficultgrandparentsToken.id === `${choice}`) {
+    addClass([difficultgrandparentsToken], 'invisible')
   } else if (catToken.id === `${choice}`) {
     addClass([catToken], 'invisible')
   } else if (dogToken.id === `${choice}`) {
@@ -167,13 +166,6 @@ function changeViewability() {
   removeClass([outcomeGameView], 'hidden');
   removeClass([gameControlBox], 'invisible')
   addClass([classicGameView, difficultGameView], 'hidden');
-};
-
-function clearLocalWins() {
-  localStorage.clear();
-  game = new Game();
-  humanWins.innerText = `Wins: ${game.player1.wins}`;
-  computerWins.innerText = `Wins: ${game.player2.wins}`;
 };
 
 function removeClass(elements, rule) {
