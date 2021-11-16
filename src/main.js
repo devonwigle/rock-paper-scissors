@@ -29,9 +29,9 @@ var gameControlBox = document.querySelector('.game-control-box');
 var childrenButton = document.querySelector('#children');
 var parentsButton = document.querySelector('#parents');
 var grandparentsButton = document.querySelector('#grandparents');
-var difficultChildrenButton = document.querySelector('#difficultChildren');
-var difficultParentsButton = document.querySelector('#difficultParents');
-var difficultGrandparentsButton = document.querySelector('#difficultGrandparents');
+var difficultChildrenButton = document.querySelector('#difficultchildren');
+var difficultParentsButton = document.querySelector('#difficultparents');
+var difficultGrandparentsButton = document.querySelector('#difficultgrandparents');
 var catButton = document.querySelector('#cat');
 var dogButton = document.querySelector('#dog');
 // tokens
@@ -56,13 +56,13 @@ grandparentsButton.addEventListener('click', function() {
   showOutcome('grandparents')
 });
 difficultChildrenButton.addEventListener('click', function() {
-  showOutcome('difficultChildren')
+  showOutcome('difficultchildren')
 });
 difficultParentsButton.addEventListener('click', function() {
-  showOutcome('difficultParents')
+  showOutcome('difficultparents')
 });
 difficultGrandparentsButton.addEventListener('click', function() {
-  showOutcome('difficultGrandparents')
+  showOutcome('difficultgrandparents')
 });
 catButton.addEventListener('click', function() {
   showOutcome('cat')
@@ -160,7 +160,7 @@ function updateInfo(choice) {
   player1Outcome.src = `${game.player1.src}`;
   player2Outcome.src = `${game.player2.src}`;
   console.log("player1", `${game.player1.src}`)
-  console.log("player2", `${game.player1.src}`)
+  console.log("player2", `${game.player2.src}`)
 };
 
 function changeViewability() {
