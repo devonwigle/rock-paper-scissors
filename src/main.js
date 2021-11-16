@@ -10,9 +10,9 @@ var tagline = document.querySelector('h2');
 var childrenToken = document.querySelector('#childrenToken');
 var parentsToken = document.querySelector('#parentsToken');
 var grandparentsToken = document.querySelector('#grandparentsToken');
-var difficultChildrenToken = document.querySelector('#difficultChildrenToken');
-var difficultParentsToken = document.querySelector('#difficultParentsToken');
-var difficultGrandparentsToken = document.querySelector('#difficultGrandparentsToken');
+var difficultChildrenToken = document.querySelector('#difficultchildrenToken');
+var difficultParentsToken = document.querySelector('#difficultparentsToken');
+var difficultGrandparentsToken = document.querySelector('#difficultgrandparentsToken');
 var catToken = document.querySelector('#catToken');
 var dogToken = document.querySelector('#dogToken');
 //views
@@ -29,23 +29,22 @@ var gameControlBox = document.querySelector('.game-control-box');
 var childrenButton = document.querySelector('#children');
 var parentsButton = document.querySelector('#parents');
 var grandparentsButton = document.querySelector('#grandparents');
-var difficultChildrenButton = document.querySelector('#difficultChildren');
-var difficultParentsButton = document.querySelector('#difficultParents');
-var difficultGrandparentsButton = document.querySelector('#difficultGrandparents');
+var difficultChildrenButton = document.querySelector('#difficultchildren');
+var difficultParentsButton = document.querySelector('#difficultparents');
+var difficultGrandparentsButton = document.querySelector('#difficultgrandparents');
 var catButton = document.querySelector('#cat');
 var dogButton = document.querySelector('#dog');
 // tokens
 var childrenToken = document.querySelector('#childrenToken');
 var parentsToken = document.querySelector('#parentsToken');
 var grandparentsToken = document.querySelector('#grandparentsToken');
-var difficultChildrenToken = document.querySelector('#difficultChildrenToken');
-var difficultParentsToken = document.querySelector('#difficultParentsToken');
-var difficultGrandparentsToken = document.querySelector('#difficultGrandparentsToken');
+var difficultchildrenToken = document.querySelector('#difficultchildrenToken');
+var difficultparentsToken = document.querySelector('#difficultparentsToken');
+var difficultgrandparentsToken = document.querySelector('#difficultgrandparentsToken');
 //eventListeners
 classicDifficultyButton.addEventListener('click', showClassicGame);
 difficultDifficultyButton.addEventListener('click', showDifficultGame);
 changeDifficulty.addEventListener('click', showDifficultySelector);
-clearWins.addEventListener('click', clearLocalWins);
 childrenButton.addEventListener('click', function() {
   showOutcome('children');
 });
@@ -56,13 +55,13 @@ grandparentsButton.addEventListener('click', function() {
   showOutcome('grandparents')
 });
 difficultChildrenButton.addEventListener('click', function() {
-  showOutcome('difficultChildren')
+  showOutcome('difficultchildren')
 });
 difficultParentsButton.addEventListener('click', function() {
-  showOutcome('difficultParents')
+  showOutcome('difficultparents')
 });
 difficultGrandparentsButton.addEventListener('click', function() {
-  showOutcome('difficultGrandparents')
+  showOutcome('difficultgrandparents')
 });
 catButton.addEventListener('click', function() {
   showOutcome('cat')
@@ -76,10 +75,9 @@ window.addEventListener('load', function() {
   computerWins.innerText = `Wins: ${game.player2.wins}`;
 });
 
-//functions
 function showClassicGame() {
-  addClass([difficultySelectorView], 'hidden');
-  removeClass([classicGameView], 'hidden');
+  addClass([difficultySelectorView, catButton, dogButton], 'hidden');
+  removeClass([difficultGameView], 'hidden');
   tagline.innerText = "Choose your family member"
   game.type = 'classic'
   game.trackData();
@@ -87,7 +85,7 @@ function showClassicGame() {
 
 function showDifficultGame() {
   addClass([classicGameView, difficultySelectorView, outcomeGameView], 'hidden');
-  removeClass([difficultGameView], 'hidden');
+  removeClass([difficultGameView, catButton, dogButton], 'hidden');
   tagline.innerText = "Choose your family member"
   game.type = 'difficult';
   game.trackData();
@@ -120,12 +118,12 @@ function showToken(choice) {
     removeClass([parentsToken], 'invisible')
   } else if (grandparentsToken.id === `${choice}`) {
     removeClass([grandparentsToken], 'invisible')
-  } else if (difficultChildrenToken.id === `${choice}`) {
-    removeClass([difficultChildrenToken], 'invisible')
-  } else if (difficultParentsToken.id === `${choice}`) {
-    removeClass([difficultParentsToken], 'invisible')
-  } else if (difficultGrandparentsToken.id === `${choice}`) {
-    removeClass([difficultGrandparentsToken], 'invisible')
+  } else if (difficultchildrenToken.id === `${choice}`) {
+    removeClass([difficultchildrenToken], 'invisible')
+  } else if (difficultparentsToken.id === `${choice}`) {
+    removeClass([difficultparentsToken], 'invisible')
+  } else if (difficultgrandparentsToken.id === `${choice}`) {
+    removeClass([difficultgrandparentsToken], 'invisible')
   } else if (catToken.id === `${choice}`) {
     removeClass([catToken], 'invisible')
   } else if (dogToken.id === `${choice}`) {
@@ -140,12 +138,12 @@ function hideToken(choice) {
     addClass([parentsToken], 'invisible')
   } else if (grandparentsToken.id === `${choice}`) {
     addClass([grandparentsToken], 'invisible')
-  } else if (difficultChildrenToken.id === `${choice}`) {
-    addClass([difficultChildrenToken], 'invisible')
-  } else if (difficultParentsToken.id === `${choice}`) {
-    addClass([difficultParentsToken], 'invisible')
-  } else if (difficultGrandparentsToken.id === `${choice}`) {
-    addClass([difficultGrandparentsToken], 'invisible')
+  } else if (difficultchildrenToken.id === `${choice}`) {
+    addClass([difficultchildrenToken], 'invisible')
+  } else if (difficultparentsToken.id === `${choice}`) {
+    addClass([difficultparentsToken], 'invisible')
+  } else if (difficultgrandparentsToken.id === `${choice}`) {
+    addClass([difficultgrandparentsToken], 'invisible')
   } else if (catToken.id === `${choice}`) {
     addClass([catToken], 'invisible')
   } else if (dogToken.id === `${choice}`) {
@@ -160,19 +158,14 @@ function updateInfo(choice) {
   computerWins.innerText = `Wins: ${game.player2.wins}`;
   player1Outcome.src = `${game.player1.src}`;
   player2Outcome.src = `${game.player2.src}`;
+  console.log("player1", `${game.player1.src}`)
+  console.log("player2", `${game.player2.src}`)
 };
 
 function changeViewability() {
   removeClass([outcomeGameView], 'hidden');
   removeClass([gameControlBox], 'invisible')
   addClass([classicGameView, difficultGameView], 'hidden');
-};
-
-function clearLocalWins() {
-  localStorage.clear();
-  game = new Game();
-  humanWins.innerText = `Wins: ${game.player1.wins}`;
-  computerWins.innerText = `Wins: ${game.player2.wins}`;
 };
 
 function removeClass(elements, rule) {
@@ -186,7 +179,3 @@ function addClass(elements, rule) {
       elements[i].classList.add(rule)
   }
 };
-
-function toggleClass(element) {
-  element.classList.toggle(element)
-}
