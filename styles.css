@@ -52,11 +52,8 @@ h2 {
     flex-wrap: wrap;
 }
 
+.outcome-box,
 .difficult-button-box {
-  margin: 0;
-}
-
-.outcome-box {
   margin: 0;
 }
 
