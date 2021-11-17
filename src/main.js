@@ -45,7 +45,7 @@ classicDifficultyButton.addEventListener('click', showClassicGame);
 difficultDifficultyButton.addEventListener('click', showDifficultGame);
 changeDifficultyButton.addEventListener('click', showDifficultySelector);
 childrenButton.addEventListener('click', function() {
-  showOutcome('children');
+  showOutcome('children')
 });
 parentsButton.addEventListener('click', function() {
   showOutcome('parents')
@@ -107,8 +107,8 @@ function showOutcome(choice) {
 function callTimeouts(choice) {
   setTimeout(changeViewability, 300);
   setTimeout(updateInfo, 300, choice);
-  setTimeout(game.resetGame, 2000);
-}
+  setTimeout(game.resetGame, 1000);
+};
 
 function showToken(choice) {
   if (childrenToken.id === `${choice}`) {
@@ -128,7 +128,7 @@ function showToken(choice) {
   } else if (dogToken.id === `${choice}`) {
     removeClass([dogToken], 'invisible')
   }
-}
+};
 
 function hideToken(choice) {
   if (childrenToken.id === `${choice}`) {
@@ -148,7 +148,7 @@ function hideToken(choice) {
   } else if (dogToken.id === `${choice}`) {
     addClass([dogToken], 'invisible')
   }
-}
+};
 
 function updateInfo(choice) {
   hideToken(choice);
