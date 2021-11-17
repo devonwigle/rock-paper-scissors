@@ -157,8 +157,6 @@ function updateInfo(choice) {
   computerWins.innerText = `Wins: ${game.player2.wins}`;
   player1Outcome.src = `${game.player1.src}`;
   player2Outcome.src = `${game.player2.src}`;
-  console.log("player1", `${game.player1.src}`)
-  console.log("player2", `${game.player2.src}`)
 };
 
 function changeViewability() {
