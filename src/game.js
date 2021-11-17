@@ -8,12 +8,8 @@ class Game {
   }
 
   trackData() {
-    var classics = ['children', 'parents', 'grandparents'];
-    var difficults = ['children', 'parents', 'grandparents', 'difficultchildren', 'difficultparents', 'difficultgrandparents', 'dog', 'cat'];
-    if (this.type === 'classic') {
-      this.choices = difficults
-    } else if (this.type === 'difficult')
-    this.choices = difficults
+    var gameOptions = ['children', 'parents', 'grandparents', 'difficultchildren', 'difficultparents', 'difficultgrandparents', 'dog', 'cat'];
+    this.choices = gameOptions;
   }
 
   winConditions() {
