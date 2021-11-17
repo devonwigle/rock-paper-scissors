@@ -6,7 +6,7 @@ var humanWins = document.querySelector('.human-wins');
 var computerWins = document.querySelector('.computer-wins');
 var players = ['player1', 'player2'];
 var tagline = document.querySelector('h2');
-//var tokenBox = document.querySelectorAll('.token-box')
+//tokens
 var childrenToken = document.querySelector('#childrenToken');
 var parentsToken = document.querySelector('#parentsToken');
 var grandparentsToken = document.querySelector('#grandparentsToken');
@@ -23,9 +23,8 @@ var outcomeGameView = document.querySelector('.outcome-game-view');
 //buttons
 var difficultDifficultyButton = document.querySelector('.difficult-difficulty-selector');
 var classicDifficultyButton = document.querySelector('.classic-difficulty-selector');
-var clearWins = document.querySelector('#clearWins');
-var changeDifficulty = document.querySelector('#changeDifficulty')
 var gameControlBox = document.querySelector('.game-control-box');
+var changeDifficultyButton = document.querySelector('#changeDifficulty')
 var childrenButton = document.querySelector('#children');
 var parentsButton = document.querySelector('#parents');
 var grandparentsButton = document.querySelector('#grandparents');
@@ -44,9 +43,9 @@ var difficultgrandparentsToken = document.querySelector('#difficultgrandparentsT
 //eventListeners
 classicDifficultyButton.addEventListener('click', showClassicGame);
 difficultDifficultyButton.addEventListener('click', showDifficultGame);
-changeDifficulty.addEventListener('click', showDifficultySelector);
+changeDifficultyButton.addEventListener('click', showDifficultySelector);
 childrenButton.addEventListener('click', function() {
-  showOutcome('children');
+  showOutcome('children')
 });
 parentsButton.addEventListener('click', function() {
   showOutcome('parents')
@@ -108,8 +107,8 @@ function showOutcome(choice) {
 function callTimeouts(choice) {
   setTimeout(changeViewability, 300);
   setTimeout(updateInfo, 300, choice);
-  setTimeout(game.resetGame, 2000);
-}
+  setTimeout(game.resetGame, 1000);
+};
 
 function showToken(choice) {
   if (childrenToken.id === `${choice}`) {
@@ -129,7 +128,7 @@ function showToken(choice) {
   } else if (dogToken.id === `${choice}`) {
     removeClass([dogToken], 'invisible')
   }
-}
+};
 
 function hideToken(choice) {
   if (childrenToken.id === `${choice}`) {
@@ -149,7 +148,7 @@ function hideToken(choice) {
   } else if (dogToken.id === `${choice}`) {
     addClass([dogToken], 'invisible')
   }
-}
+};
 
 function updateInfo(choice) {
   hideToken(choice);

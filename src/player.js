@@ -14,17 +14,16 @@ class Player {
   }
   takeTurn(choice) {
     if (choice) {
-      this.choice = choice
-      this.src = `./assets/${this.choice}.svg`
+      this.choice = choice;
+      this.src = `./assets/${this.choice}.svg`;
     } else if (!choice) {
       if (game.type === 'classic') {
-        this.choice = `difficult${game.choices[Math.floor(Math.random() * 3)]}`
-        console.log("computer", this.choice)
-        this.src = `./assets/${this.choice}.svg`
+        this.choice = `difficult${game.choices[Math.floor(Math.random() * 3)]}`;
+        this.src = `./assets/${this.choice}.svg`;
       } else if (game.type === 'difficult') {
-        this.choice = game.choices[Math.floor(Math.random() * 5 + 3)]
-        this.src = `./assets/${this.choice}.svg`
+        this.choice = game.choices[Math.floor(Math.random() * 5 + 3)];
+        this.src = `./assets/${this.choice}.svg`;
       }
     }
   }
-}
+};
